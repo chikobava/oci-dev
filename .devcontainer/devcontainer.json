@@ -1,0 +1,21 @@
+{
+    "name": "oracle",
+    "dockerFile": "Dockerfile",
+    "context": "..",
+    "remoteUser": "oracle",
+    "workspaceFolder": "/oc",
+    "workspaceMount": "source=${localWorkspaceFolder},target=/oc,type=bind,consistency=delegated",
+    "mounts": [
+        "source=${localWorkspaceFolder}/.oci,target=/home/oracle/.oci,type=bind,consistency=cached",
+        "source=${localWorkspaceFolder}/.ssh,target=/home/oracle/.ssh,type=bind,consistency=cached"
+    ],
+    "customizations": {
+        "vscode": {
+            "extensions": [
+                "hashicorp.terraform",
+                "hashicorp.hcl",
+                "redhat.ansible"
+            ]
+        }
+    }
+}
